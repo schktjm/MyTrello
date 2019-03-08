@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+    strict: true,
     state: {
         list: [
             {
@@ -14,6 +15,11 @@ export default new Vuex.Store({
             {
                 text: 'kjkljk',
                 date: '1998/09/19',
+                place: ''
+            },
+            {
+                text: 'hage',
+                date: '',
                 place: ''
             }
         ],
@@ -26,6 +32,9 @@ export default new Vuex.Store({
         incrementCount(state) {
             state.count++;
         },
+        updateList(state, payload) {
+            state.list = payload.list;
+        }
     },
     actions: {}
 })

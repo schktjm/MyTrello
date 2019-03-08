@@ -1,6 +1,6 @@
 <template>
     <div>
-        <base-box v-for="(item, idx) in list" :key="idx">
+        <base-box>
             <p>{{item.text}}</p>
             <p>{{item.place}}</p>
             <p>
@@ -18,7 +18,7 @@
         name: 'ListItem',
         components: {BaseBox},
         props: {
-            list: Array
+            item: Object
         },
         computed: {},
         methods: {
