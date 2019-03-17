@@ -1,7 +1,7 @@
 <template>
-    <draggable v-model="list" group="list" class="one-list">
-        <list-item v-for="(item,idx) in list" :key="idx" :item="item"></list-item>
-    </draggable>
+    <div class="one-list">
+        <list-item v-for="(item,idx) in listObj.list" :key="idx" :item="item"></list-item>
+    </div>
 </template>
 
 <script>
@@ -11,17 +11,29 @@
     export default {
         name: 'List',
         components: {ListItem, draggable},
-        computed: {
-            list: {
-                get() {
-                    return this.$store.state.list;
-                },
-                set(newlist) {
-                    this.$store.commit('updateList', {list: newlist})
-                }
-
+        props: {
+            listObj: {
+                name: String,
+                list: Array
             }
-        }
+        },
+        data() {
+            return {
+                newlistObj: this.listObj
+            }
+        },
+        computed: {
+            // list: {
+            //     get() {
+            //         return this.$store.state.list;
+            //     },
+            //     set(newlist) {
+            //         this.$store.commit('updateList', {list: newlist})
+            //     }
+            //
+            // }
+        },
+        methods: {}
     }
 </script>
 
