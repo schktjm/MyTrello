@@ -1,7 +1,7 @@
 <template>
-    <draggable v-model="listObj.list" group="item" class="one-list" :clone="sendData">
+    <div class="one-list">
         <list-item v-for="(item,idx) in listObj.list" :key="idx" :item="item"></list-item>
-    </draggable>
+    </div>
 </template>
 
 <script>
@@ -33,11 +33,7 @@
             //
             // }
         },
-        methods: {
-            sendData(newlist) {
-                return newlist;
-            }
-        }
+        methods: {}
     }
 </script>
 
