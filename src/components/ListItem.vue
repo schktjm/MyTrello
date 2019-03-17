@@ -1,23 +1,17 @@
 <template>
-    <base-tile class="is-child">
-        <base-box>
-            <p>{{item.text}}</p>
-            <p>{{item.place}}</p>
-            <p>
-                <span v-if="hasDate(item)">{{item.date}}</span>
-                <span v-if="hasPlace(item)">@{{item.place}}</span>
-            </p>
-        </base-box>
-    </base-tile>
+    <div class="one-item">
+        <p>{{item.text}}</p>
+        <p>{{item.place}}</p>
+        <p>
+            <span v-if="hasDate(item)">{{item.date}}</span>
+            <span v-if="hasPlace(item)">@{{item.place}}</span>
+        </p>
+    </div>
 </template>
 
 <script>
-    import BaseBox from './BaseBox';
-    import BaseTile from './BaseTile';
-
     export default {
         name: 'ListItem',
-        components: {BaseBox, BaseTile},
         props: {
             item: Object
         },
@@ -33,4 +27,11 @@
     }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    .one-item {
+        border: black 1px solid;
+        height: 128px;
+        width: 256px;
+        margin: 5px;
+    }
+</style>
