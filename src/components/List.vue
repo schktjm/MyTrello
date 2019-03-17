@@ -1,19 +1,16 @@
 <template>
-    <base-tile class="is-parent is-4">
-        <draggable v-model="list" group="list">
-            <list-item v-for="(item,idx) in list" :key="idx" :item="item"></list-item>
-        </draggable>
-    </base-tile>
+    <draggable v-model="list" group="list" class="one-list">
+        <list-item v-for="(item,idx) in list" :key="idx" :item="item"></list-item>
+    </draggable>
 </template>
 
 <script>
-    import BaseTile from './BaseTile';
     import draggable from 'vuedraggable';
     import ListItem from './ListItem';
 
     export default {
         name: 'List',
-        components: {BaseTile, ListItem, draggable},
+        components: {ListItem, draggable},
         computed: {
             list: {
                 get() {
@@ -28,4 +25,10 @@
     }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    .one-list {
+        border: red 1px solid;
+        width: 266px;
+        margin: 10px 20px;
+    }
+</style>
