@@ -1,6 +1,6 @@
 <template>
-    <draggable v-model="list" group="list" class="one-list">
-        <list-item v-for="(item,idx) in list" :key="idx" :item="item"></list-item>
+    <draggable v-model="listObj.list" group="item" class="one-list" :clone="sendData">
+        <list-item v-for="(item,idx) in listObj.list" :key="idx" :item="item"></list-item>
     </draggable>
 </template>
 
@@ -11,15 +11,31 @@
     export default {
         name: 'List',
         components: {ListItem, draggable},
+        props: {
+            listObj: {
+                name: String,
+                list: Array
+            }
+        },
+        data() {
+            return {
+                newlistObj: this.listObj
+            }
+        },
         computed: {
-            list: {
-                get() {
-                    return this.$store.state.list;
-                },
-                set(newlist) {
-                    this.$store.commit('updateList', {list: newlist})
-                }
-
+            // list: {
+            //     get() {
+            //         return this.$store.state.list;
+            //     },
+            //     set(newlist) {
+            //         this.$store.commit('updateList', {list: newlist})
+            //     }
+            //
+            // }
+        },
+        methods: {
+            sendData(newlist) {
+                return newlist;
             }
         }
     }
