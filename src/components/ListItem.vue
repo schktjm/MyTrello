@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <base-tile class="is-child">
         <base-box>
             <p>{{item.text}}</p>
             <p>{{item.place}}</p>
@@ -8,15 +8,16 @@
                 <span v-if="hasPlace(item)">@{{item.place}}</span>
             </p>
         </base-box>
-    </div>
+    </base-tile>
 </template>
 
 <script>
     import BaseBox from './BaseBox';
+    import BaseTile from './BaseTile';
 
     export default {
         name: 'ListItem',
-        components: {BaseBox},
+        components: {BaseBox, BaseTile},
         props: {
             item: Object
         },
