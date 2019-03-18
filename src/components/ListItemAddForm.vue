@@ -4,7 +4,7 @@
         <button type="button" @click="sbmMessage">カードを追加</button>
         <span style="margin-right: 1em;"></span>
         <button class="del-button" type="button" @click="$emit('clickDel')">
-            <font-awesome-icon icon="ban"></font-awesome-icon>
+            <font-awesome-icon icon="times"></font-awesome-icon>
         </button>
     </div>
 </template>
