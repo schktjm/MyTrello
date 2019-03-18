@@ -1,11 +1,6 @@
 <template>
     <div class="one-item">
         <p>{{item.text}}</p>
-        <p>{{item.place}}</p>
-        <p>
-            <span v-if="hasDate(item)">{{item.date}}</span>
-            <span v-if="hasPlace(item)">@{{item.place}}</span>
-        </p>
     </div>
 </template>
 
@@ -30,7 +25,7 @@
 <style lang="scss" scoped>
     .one-item {
         border: black 1px solid;
-        height: 128px;
+        height: 56px;
         width: 256px;
         margin: 5px;
     }
