@@ -1,16 +1,21 @@
 <template>
     <div class="one-list">
         <list-item v-for="(item,idx) in listObj.list" :key="idx" :item="item"></list-item>
+        <ListItemAddButton @clickAdd="isShowFrom=true" v-show="!isShowFrom"></ListItemAddButton>
+        <list-item-add-form v-show="isShowFrom" @clickDel="isShowFrom = false"
+                            @submit="addNewItem"></list-item-add-form>
     </div>
 </template>
 
 <script>
     import draggable from 'vuedraggable';
     import ListItem from './ListItem';
+    import ListItemAddButton from './ListItemAddButton';
+    import ListItemAddForm from './ListItemAddForm';
 
     export default {
         name: 'List',
-        components: {ListItem, draggable},
+        components: {ListItem, ListItemAddButton, ListItemAddForm, draggable},
         props: {
             listObj: {
                 name: String,
@@ -19,7 +24,8 @@
         },
         data() {
             return {
-                newlistObj: this.listObj
+                newlistObj: this.listObj,
+                isShowFrom: false
             }
         },
         computed: {
@@ -33,7 +39,14 @@
             //
             // }
         },
-        methods: {}
+        methods: {
+            log(val) {
+                console.log(val);
+            },
+            addNewItem(val) {
+                console.log(val);
+            }
+        }
     }
 </script>
 
