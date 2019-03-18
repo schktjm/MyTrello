@@ -13,18 +13,12 @@ export default new Vuex.Store({
                 list: [
                     {
                         text: 'hoge',
-                        date: '2019:01:01',
-                        place: 'Japan',
                     },
                     {
                         text: 'kjkljk',
-                        date: '1998:09:19',
-                        place: ''
                     },
                     {
                         text: 'hage',
-                        date: '',
-                        place: ''
                     }
                 ]
             },
@@ -33,13 +27,9 @@ export default new Vuex.Store({
                 list: [
                     {
                         text: 'hoge',
-                        date: '1000:09:10',
-                        place: ''
                     },
                     {
                         text: 'hogwhoge',
-                        date: '',
-                        place: ''
                     }
                 ]
             }
@@ -55,6 +45,9 @@ export default new Vuex.Store({
         },
         updateLists(state, payload) {
             state.lists = payload.lists;
+        },
+        updateListItem(state, payload) {
+            state.lists[payload.idx].list = payload.list;
         },
         addNewList(state, payload) {
             state.lists = [...state.lists, {name: payload.title, list: []}];

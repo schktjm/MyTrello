@@ -1,10 +1,12 @@
 <template>
-    <div class="one-list">
-        <list-item v-for="(item,idx) in listObj.list" :key="idx" :item="item"></list-item>
-        <ListItemAddButton @clickAdd="isShowFrom=true" v-show="!isShowFrom"></ListItemAddButton>
-        <list-item-add-form v-show="isShowFrom" @clickDel="isShowFrom = false"
-                            @submit="addNewItem"></list-item-add-form>
-    </div>
+    <draggable v-model="list" group="item" class="one-list">
+        <list-item v-for="(item,idx) in list" :key="idx" :item="item"></list-item>
+        <div slot="footer">
+            <ListItemAddButton @clickAdd="isShowFrom=true" v-show="!isShowFrom"></ListItemAddButton>
+            <list-item-add-form v-show="isShowFrom" @clickDel="isShowFrom = false"
+                                @submit="addNewItem"></list-item-add-form>
+        </div>
+    </draggable>
 </template>
 
 <script>
@@ -17,32 +19,25 @@
         name: 'List',
         components: {ListItem, ListItemAddButton, ListItemAddForm, draggable},
         props: {
-            listObj: {
-                name: String,
-                list: Array
-            }
+            listIdx: Number
         },
         data() {
             return {
-                newlistObj: this.listObj,
                 isShowFrom: false
             }
         },
         computed: {
-            // list: {
-            //     get() {
-            //         return this.$store.state.list;
-            //     },
-            //     set(newlist) {
-            //         this.$store.commit('updateList', {list: newlist})
-            //     }
-            //
-            // }
+            list: {
+                get() {
+                    return this.$store.state.lists[this.listIdx].list;
+                },
+                set(newlist) {
+                    this.$store.commit('updateListItem', {list: newlist, idx: this.listIdx})
+                }
+
+            }
         },
         methods: {
-            log(val) {
-                console.log(val);
-            },
             addNewItem(val) {
                 console.log(val);
             }

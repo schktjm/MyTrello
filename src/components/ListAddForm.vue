@@ -18,9 +18,6 @@
             }
         },
         methods: {
-            log() {
-                console.log('push');
-            },
             addNewList() {
                 this.$emit('addList', this.title);
                 this.title = '';
