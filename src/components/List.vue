@@ -39,7 +39,7 @@
         },
         methods: {
             addNewItem(val) {
-                console.log(val);
+                this.list = [...this.list, {text: val}];
             }
         }
     }
