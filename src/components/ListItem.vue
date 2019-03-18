@@ -24,9 +24,22 @@
 
 <style lang="scss" scoped>
     .one-item {
-        border: black 1px solid;
-        height: 56px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 1px #90A4AE;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 2em;
         width: 256px;
-        margin: 5px;
+        margin: 10px;
+
+        &:hover {
+            background-color: #ECEFF1;
+        }
+
+        p {
+            padding-left: 1em;
+        }
     }
 </style>
