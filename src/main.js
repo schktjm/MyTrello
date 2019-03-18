@@ -4,13 +4,14 @@ import router from './router'
 import store from './store'
 import Vuex from 'vuex'
 import {library} from '@fortawesome/fontawesome-svg-core'
-import {faCoffee, faPlusSquare, faPlus, faBan} from '@fortawesome/free-solid-svg-icons'
+import {faCoffee, faPlusSquare, faPlus, faBan, faTimes} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 library.add(faCoffee);
 library.add(faPlusSquare);
 library.add(faPlus);
 library.add(faBan);
+library.add(faTimes);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

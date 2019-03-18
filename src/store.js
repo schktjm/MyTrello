@@ -55,7 +55,10 @@ export default new Vuex.Store({
         },
         updateLists(state, payload) {
             state.lists = payload.lists;
-        }
+        },
+        addNewList(state, payload) {
+            state.lists = [...state.lists, {name: payload.title, list: []}];
+        },
     },
     actions: {}
 })
