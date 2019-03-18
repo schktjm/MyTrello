@@ -19,12 +19,14 @@
 
 <style lang="scss" scoped>
     button {
-        border: black 1px dashed;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
         width: 256px;
         margin: 5px;
 
         &:hover {
-            background-color: #ECEFF1;
+            background-color: #B0BEC5;
 
             a {
                 text-decoration: underline;
