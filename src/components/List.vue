@@ -47,7 +47,7 @@
 
 <style lang="scss" scoped>
     .one-list {
-        border: red 1px solid;
+        background-color: grey;
         width: 266px;
         margin: 10px 20px;
     }

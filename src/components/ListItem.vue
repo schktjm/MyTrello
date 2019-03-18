@@ -24,8 +24,14 @@
 
 <style lang="scss" scoped>
     .one-item {
-        border: black 1px solid;
-        height: 56px;
+        background-color: white;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2em;
         width: 256px;
         margin: 5px;
     }
