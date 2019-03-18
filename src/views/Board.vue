@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <div>
+    <div class="container board">
+        <div class="a-list">
             <draggable v-model="lists" group="list" class="container">
                 <list v-for="(list, idx) in lists" :key="idx" :listIdx="idx"></list>
             </draggable>
@@ -50,5 +50,18 @@
     .container {
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .board {
+        height: 100vh;
+
+        .a-list {
+            height: 90%;
+
+            > div {
+                height: 100%;
+            }
+        }
     }
 </style>

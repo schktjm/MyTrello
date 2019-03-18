@@ -49,6 +49,7 @@
             padding: 0.5em 0 0 0.5em;
             resize: none;
             margin-bottom: 10px;
+            outline: none;
         }
 
         .sbm-button {
